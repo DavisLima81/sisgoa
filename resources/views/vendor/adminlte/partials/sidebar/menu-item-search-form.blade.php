@@ -9,7 +9,7 @@
             <input class="form-control form-control-sidebar" type="search"
                 @isset($item['id']) id="{{ $item['id'] }}" @endisset
                 name="{{ $item['input_name'] }}"
-                placeholder="{{ $item['text'] }}"
+                placeholder="Pesquisar"
                 aria-label="{{ $item['text'] }}">
 
             {{-- Search button --}}

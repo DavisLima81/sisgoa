@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'SisGoa',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -45,12 +45,13 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b>Sis</b>GOA',
+    //'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'vendor/adminlte/dist/img/logo_img.png',
+    'logo_img_class' => 'brand-image elevation-6',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'SisGOA',
 
     /*
     |--------------------------------------------------------------------------
@@ -240,31 +241,166 @@ return [
         [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
+        ],        
+        /* MENU ITEM - ASSESSORIA DE SEGURANÇA OPERACIONAL */
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text'    => 'Ass. Seg. Operacional',
+            'icon'    => 'fas fa-fw fa-user-shield',
+            'icon_color' => 'info',
+            'can' => 'aso',
+            'submenu' => [
+                [
+                    'text'        => 'Relprev',
+                    'url'         => '#',
+                    'icon'        => 'fas fa-fw fa-skull-crossbones',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Divop',
+                    'url'         => '#',
+                    'icon'        => 'fas fa-fw fa-exclamation',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Briefing',
+                    'url'         => '#',
+                    'icon'        => 'far fa-fw fa-comment',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+            ],
         ],
+        /* MENU ITEM - SEÇÃO OPERACIONAL */
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'    => 'Seção Operacional',
+            'icon'    => 'fas fa-fw fa-rocket',
+            'icon_color' => 'info',
+            'can' => 'sop',
+            'submenu' => [
+                [
+                    'text'        => 'Informar Voo',
+                    'url'         => '#',
+                    'icon'        => 'fas fa-fw fa-save',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Proc. Operacionais',
+                    'url'         => 'pops',
+                    'icon'        => 'fas fa-fw fa-thumbs-up',
+                    /* 'label'       => 18, */
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Escalas',
+                    'url'         => '#',
+                    'icon'        => 'far fa-fw fa-calendar-check',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Pilotos',
+                    'url'         => '#',
+                    'icon'        => 'fa fa-fw fa-address-card',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Tripulantes',
+                    'url'         => '#',
+                    'icon'        => 'far fa-fw fa-star',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+            ],
         ],
-        ['header' => 'account_settings'],
+        /* MENU ITEM - SEÇÃO DE MANUTENÇÃO DE HELICÓPTEROS*/
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text'    => 'Seção Mt. Helicópteros',
+            'icon'    => 'fas fa-fw fa-wrench',
+            'icon_color' => 'info',
+            'can' => 'smh',
+            'submenu' => [
+                [
+                    'text' => 'Frota',
+                    'url'  => '#',
+                    'icon' => 'fa fa-fw fa-helicopter',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text' => 'Disponibilidade',
+                    'url'  => '#',
+                    'icon' => 'fas fa-fw fa-clock',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text' => 'Suprimentos',
+                    'url'  => '#',
+                    'icon' => 'fas fa-fw fa-fan',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+            ],
         ],
+        /* MENU ITEM - SEÇÃO DE PROJETOS E AQUISIÇÕES */
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text'    => 'Seção Proj. Aquisições',
+            'icon'    => 'fas fa-fw fa-credit-card',
+            'icon_color' => 'info',
+            'can' => 'spa',
+            'submenu' => [
+                [
+                    'text' => 'Processos',
+                    'url'  => '#',
+                    'icon' => 'fa fa-fw fa-book',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text' => 'Controle Combustíveis',
+                    'url'  => '#',
+                    'icon' => 'fas fa-fw fa-gas-pump',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+            ],
         ],
+        /* MENU ITEM - CONFIGURAÇÕES */
         [
+            'text'    => 'Configurações',
+            'icon'    => 'fas fa-fw fa-check',
+            'icon_color' => 'info',
+            'can' => 'config',
+            'submenu' => [
+                [
+                    'text' => 'Usuários',
+                    'url'  => 'users',
+                    'icon' => 'fa fa-fw fa-user',
+                    'active' => ['users', 'users*', 'regex:@^users/[0-9]+$@']
+                ],
+                [
+                    'text' => 'Permissões',
+                    'url'  => 'roles',
+                    'icon' => 'fa fa-fw fa-ban',
+                    'active' => ['roles', 'roles*', 'regex:@^roles/[0-9]+$@']
+                ],
+                [
+                    'text' => 'Miscelânea',
+                    'url'  => '#',
+                    'icon' => 'fas fa-fw fa-wrench',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+            ],
+        ],
+
+
+        /* ABAIXO O MENU DE REFERÊNCIA/TEMPLATE ADMINLTE */
+        /* [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -301,8 +437,8 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
-        ['header' => 'labels'],
+        ], */
+        /* ['header' => 'labels'],
         [
             'text'       => 'important',
             'icon_color' => 'red',
@@ -317,7 +453,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ], */
     ],
 
     /*
@@ -380,13 +516,18 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
+                    'asset' => true,
+                    'location' => 'vendor/select2/js/select2.full.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
+                    'asset' => true,
+                    'location' => 'vendor/select2/css/select2.min.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/select2-bootstrap4-theme/select2-bootstrap4.min.css',
                 ],
             ],
         ],
@@ -422,6 +563,16 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+            'BsCustomFileInput' => [
+                'active' => false,
+                'files' => [
+                    [
+                        'type' => 'js',
+                        'asset' => true,
+                        'location' => 'vendor/bs-custom-file-input/bs-custom-file-input.min.js',
+                    ],
                 ],
             ],
         ],
@@ -472,5 +623,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
