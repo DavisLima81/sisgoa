@@ -42,21 +42,13 @@
         <td>{{ $pop->tipo }}</td>
         <td>{{ $pop->titulo }}</td>
         <td>
-            <a href=" {{ route('pops.show',$pop->id) }} " target="_blank" class="d-flex justify-content-center p-2">
+            {{--  <a href="{{ $pop->cover }}" target="_blank" icon="">
                 <i class="fas fa-lg fa-file-pdf"></i>
-            </a>
+            </a>  --}}
         </td>
         <td>
             @can('pop-list')
-            <a class="btn btn-primary" href="#" target="_blank">Detalhes</a>
-            @endcan
-            @can('pop-edit')
-                <a class="btn btn-primary" href="{{ route('pops.edit',$pop->id) }}">Editar</a>
-            @endcan
-            @can('pop-delete')
-                {!! Form::open(['method' => 'DELETE','route' => ['pops.destroy', $pop->id],'style'=>'display:inline']) !!}
-                    {!! Form::submit('Apagar', ['class' => 'btn btn-secondary']) !!}
-                {!! Form::close() !!}
+            <a class="btn btn-primary" href="{{ route('pops.show',$pop->id) }}">Detalhes</a>
             @endcan
         </td>
     </tr>

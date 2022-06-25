@@ -3,17 +3,17 @@
 @section('title', 'Painel geral')
 
 @section('content_header')
-    <h1>Gestão de POPs</h1>
-    <small>Exibir conteúdo de Procedimento Operacional Padrão</small>
+    <h1>Gestão de Permissões</h1>
 @stop
 
 @section('content')
 
 @section('content')
-<div class="container">
-    
 
-</div>
+///////////////////// SECTION AQUI ////////////////////
+
+
+
 @endsection
 @stop
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PopController;
+use App\Http\Controllers\welcomeController;
 use Illuminate\Support\Facades\Storage;
 use League\Flysystem\StorageAttributes;
 
@@ -25,13 +26,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/davis', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
   

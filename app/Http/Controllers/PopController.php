@@ -38,6 +38,15 @@ class PopController extends Controller
 
     }
 
+    public function guest(Request $request)
+    {
+        //
+        $pops = Pop::orderBy('id','DESC')->paginate(5);
+        return view('pops.guest',compact('pops'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -109,16 +118,10 @@ class PopController extends Controller
      */
     
     public function show(Pop $pop)
-    {
-        //$path = $pop->cover;
-        //return view('pops.show', compact('path'));
-        //return response()->file(storage_path($pop->cover));
-        //dd($pop);
-        //$path = $pop->cover;
-        return response()->file('/pops/15GKs8ZPNV3BjAHkVwOkgYbZHNBLHTSgLtfFntck.pdf');
-        //return view('pops.show');
-        /* $data = Pop::all();
-        return view('pops.show', compact('data')); */
+    {   
+        $prePath = $pop->cover;
+        $path = substr_replace($prePath, 'storage', 0, 6);
+        return response()->file($path);
     }
 
     /**
