@@ -42,13 +42,13 @@
         <td>{{ $pop->tipo }}</td>
         <td>{{ $pop->titulo }}</td>
         <td>
-            <a href=" {{ route('pops.show',$pop->id) }} " target="_blank" class="d-flex justify-content-center p-2">
+            <a href=" {{ route('pops.showfile',$pop->id) }} " target="_blank" class="d-flex justify-content-center p-2">
                 <i class="fas fa-lg fa-file-pdf"></i>
             </a>
         </td>
         <td>
             @can('pop-list')
-            <a class="btn btn-primary" href="#" target="_blank">Detalhes</a>
+            <a class="btn btn-primary" href=" {{ route('pops.show',$pop->id) }} " >Detalhes</a>
             @endcan
             @can('pop-edit')
                 <a class="btn btn-primary" href="{{ route('pops.edit',$pop->id) }}">Editar</a>

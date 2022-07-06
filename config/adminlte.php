@@ -371,8 +371,8 @@ return [
         ],
         /* MENU ITEM - CONFIGURAÇÕES */
         [
-            'text'    => 'Configurações',
-            'icon'    => 'fas fa-fw fa-check',
+            'text'    => 'Sistema',
+            'icon'    => 'fas fa-fw fa-desktop',
             'icon_color' => 'info',
             'can' => 'config',
             'submenu' => [

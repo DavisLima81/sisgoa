@@ -117,7 +117,13 @@ class PopController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function show(Pop $pop)
+    public function show($id)
+    {
+        $pop = Pop::find($id);
+        return view('pops.show',compact('pop'));
+    }
+
+    public function showFile(Pop $pop)
     {   
         $prePath = $pop->cover;
         $path = substr_replace($prePath, 'storage', 0, 6);

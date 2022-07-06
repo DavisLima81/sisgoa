@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('pops', PopController::class);
+    Route::get('pops{pop}', [PopController::class, 'showFile'])->name('pops.showfile');
     /* Route::resource('pilotos', PilotoController::class); */
 });
 
