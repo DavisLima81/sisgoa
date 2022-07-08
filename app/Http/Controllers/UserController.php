@@ -9,6 +9,9 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facedes\Session;
+use Illuminate\Support\Facades\Auth;
     
 class UserController extends Controller
 {
@@ -55,7 +58,11 @@ class UserController extends Controller
     
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
-    
+
+        //LOG, enviar dados para o LOG
+        $agentUser = auth()->user()->name;
+        Log::channel('slack')->info($agentUser . ' CRIOU usuário no Sisgoa: ' . $user->name . '/' . $user->email );
+
         return redirect()->route('users.index')
                         ->with('success','User created successfully');
     }
@@ -128,7 +135,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        $user = User::find($id);
         User::find($id)->delete();
+
+        //LOG, enviar dados para o LOG
+        $agentUser = auth()->user()->name;
+        Log::channel('slack')->info($agentUser . ' DELETOU usuário no Sisgoa: ' . $user->name . '/' . $user->email );
+
         return redirect()->route('users.index')
                         ->with('success','User deleted successfully');
     }

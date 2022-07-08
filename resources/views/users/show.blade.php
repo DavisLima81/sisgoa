@@ -13,7 +13,7 @@
             <h4> Visualizar Usuário</h4>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Voltar</a>
+            <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}"> Voltar</a>
         </div>
     </div>
 </div>

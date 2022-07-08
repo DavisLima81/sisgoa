@@ -7,15 +7,13 @@
 @stop
 
 @section('content')
-
-@section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2> Visulizar</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('roles.index') }}"> Voltar</a>
+            <a class="btn btn-primary btn-sm" href="{{ route('roles.index') }}"> Voltar</a>
         </div>
         <br>
     </div>
@@ -41,12 +39,3 @@
     </div>
 </div>
 @endsection
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> </script>
-@stop

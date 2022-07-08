@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PopController;
+use App\Http\Controllers\TestesController;
 use App\Http\Controllers\welcomeController;
 use Illuminate\Support\Facades\Storage;
 use League\Flysystem\StorageAttributes;
@@ -39,7 +40,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
     Route::resource('pops', PopController::class);
     Route::get('pops{pop}', [PopController::class, 'showFile'])->name('pops.showfile');
-    /* Route::resource('pilotos', PilotoController::class); */
+    //Route::get('/teste', [TestesController::class, 'index'])->name('teste');
+    //Route::resource('pilotos', PilotoController::class);
 });
 
 //Rota de fallback, tratamento de erro 404

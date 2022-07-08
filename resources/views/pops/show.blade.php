@@ -3,17 +3,17 @@
 @section('title', 'Painel geral')
 
 @section('content_header')
-    <h1>Gerenciamento de Usuários</h1>
+    <h1>Gerenciamento de POPs</h1>
 @stop
 
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h4> Visualizar Usuário</h4>
+            <h4> Visualizar POP</h4>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Voltar</a>
+            <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}"> Voltar</a>
         </div>
     </div>
 </div>

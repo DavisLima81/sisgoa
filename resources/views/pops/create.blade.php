@@ -7,7 +7,6 @@
 @stop
 
 @section('content')
-@section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
@@ -62,14 +61,5 @@
 
    
 @endsection
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> </script>
-@stop
 
 

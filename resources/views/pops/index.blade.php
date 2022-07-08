@@ -8,12 +8,11 @@
 @stop
 
 @section('content')
-@section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">   
         <div class="pull-right">
             @can('pop-create')
-            <a class="btn btn-success" href="{{ route('pops.create') }}"> Incluir Novo</a>
+            <a class="btn btn-success btn-sm" href="{{ route('pops.create') }}"> Incluir Novo</a>
             @endcan
         </div>
         <br>
@@ -48,14 +47,14 @@
         </td>
         <td>
             @can('pop-list')
-            <a class="btn btn-primary" href=" {{ route('pops.show',$pop->id) }} " >Detalhes</a>
+            <a class="btn btn-primary btn-sm" href=" {{ route('pops.show',$pop->id) }} " >Detalhes</a>
             @endcan
             @can('pop-edit')
-                <a class="btn btn-primary" href="{{ route('pops.edit',$pop->id) }}">Editar</a>
+                <a class="btn btn-primary btn-sm" href="{{ route('pops.edit',$pop->id) }}">Editar</a>
             @endcan
             @can('pop-delete')
                 {!! Form::open(['method' => 'DELETE','route' => ['pops.destroy', $pop->id],'style'=>'display:inline']) !!}
-                    {!! Form::submit('Apagar', ['class' => 'btn btn-secondary']) !!}
+                    {!! Form::submit('Apagar', ['class' => 'btn btn-secondary btn-sm']) !!}
                 {!! Form::close() !!}
             @endcan
         </td>
@@ -63,16 +62,6 @@
     @endforeach
 </table>
 
-
 {!! $pops->render() !!}
 
 @endsection
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> </script>
-@stop

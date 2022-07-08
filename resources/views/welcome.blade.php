@@ -83,14 +83,14 @@
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     <div id="metar">
                                         <small class="text-black p-0 m-0">Aeroporto Santos Dumont</small> <br>
-                                        {{ $response['data'][2][5] }} <br>
-                                        <small class="text-black p-0 m-0">Aeroporto de Jacarepaguá</small> <br>
                                         {{ $response['data'][1][5] }} <br>
+                                        <small class="text-black p-0 m-0">Aeroporto de Jacarepaguá</small> <br>
+                                        {{ $response['data'][0][5] }} <br>
                                         <small class="text-danger p-0 m-0">Mensagens obtidas via api-redemet.decea.mil.br</small><br>
                                         <small class="text-danger p-0 m-0" id="data-hora-meteoro">Em {{ $meteoroDate }}</small>
                                     </div>
                                     <br>
-                                    <a href="#">Ver briefing completo</a>
+                                    <a href="https://www.redemet.aer.mil.br/">Ver o REDEMET</a>
                                 </div>
                             </div>
                         </div>
@@ -109,8 +109,8 @@
                                     <small class="text-black p-0 m-0">NOTAMS FIR Curitiba SBCW</small> <br>
                                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, nesciunt porro veritatis nihil sunt totam labore itaque dolores similique qui mollitia accusamus quaerat obcaecati enim?</p>
                                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, nesciunt porro veritatis nihil sunt totam labore itaque dolores similique qui mollitia accusamus quaerat obcaecati enim?</p>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, nesciunt porro veritatis nihil sunt totam labore itaque dolores similique qui mollitia accusamus quaerat obcaecati enim?</p>
-                                    <a href="#" class="m-0 p-0">Ver briefing completo</a>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    <a href="https://aisweb.decea.mil.br/" class="m-0 p-0">Ver o AISWEB</a>
                                 </div>
                                 
                             </div>
@@ -125,8 +125,6 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    <a href="https://www.redemet.aer.mil.br/" target="_blank">REDEMET</a> <br>
-                                    <a href="https://aisweb.decea.mil.br/" target="_blank">AISWEB</a> <br>
                                     <a href="https://intranet.cbmerj.rj.gov.br/" target="_blank">CBMERJ: Login</a> <br>
                                     <a href="https://sei.fazenda.rj.gov.br/sip/login.php?sigla_orgao_sistema=ERJ&sigla_sistema=SEI&infra_url=L3NlaS8=" target="_blank">SEI: Login</a> <br>
                                     <a href="https://webmail.cbmerj.rj.gov.br/" target="_blank">WEBMAIL CBMERJ: Login</a> <br>

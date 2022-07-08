@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('users.create') }}">Incluir Novo</a>
+            <a class="btn btn-success btn-sm" href="{{ route('users.create') }}">Incluir novo</a>
         </div>
         <br>
     </div>
@@ -46,14 +46,14 @@
     </td>
     <td>
         @can('user-list')
-        <a class="btn btn-primary" href="{{ route('users.show',$user->id) }}">Visualizar</a>
+        <a class="btn btn-primary btn-sm" href="{{ route('users.show',$user->id) }}">Visualizar</a>
         @endcan
         @can('user-edit')
-        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Editar</a>
+        <a class="btn btn-primary btn-sm" href="{{ route('users.edit',$user->id) }}">Editar</a>
         @endcan
         @can('user-delete')
         {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Apagar', ['class' => 'btn btn-secondary']) !!}
+            {!! Form::submit('Apagar', ['class' => 'btn btn-secondary btn-sm']) !!}
         {!! Form::close() !!}
         @endcan
     </td>
@@ -64,12 +64,4 @@
 
 {!! $data->render() !!}
 
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> </script>
 @stop

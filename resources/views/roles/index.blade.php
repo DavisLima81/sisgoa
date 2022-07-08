@@ -7,12 +7,11 @@
 @stop
 
 @section('content')
-@section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">   
         <div class="pull-right">
         @can('role-create')
-            <a class="btn btn-success" href="{{ route('roles.create') }}"> Criar permissão</a>
+            <a class="btn btn-success btn-sm" href="{{ route('roles.create') }}">Incluir permissão</a>
         @endcan
         </div>
         <br>
@@ -39,14 +38,14 @@
         <td>{{ $role->name }}</td>
         <td>
             @can('role-list')
-            <a class="btn btn-primary" href="{{ route('roles.show',$role->id) }}">Visualizar</a>
+            <a class="btn btn-primary btn-sm" href="{{ route('roles.show',$role->id) }}">Visualizar</a>
             @endcan
             @can('role-edit')
-                <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Editar</a>
+                <a class="btn btn-primary btn-sm" href="{{ route('roles.edit',$role->id) }}">Editar</a>
             @endcan
             @can('role-delete')
                 {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
-                    {!! Form::submit('Apagar', ['class' => 'btn btn-secondary']) !!}
+                    {!! Form::submit('Apagar', ['class' => 'btn btn-secondary btn-sm']) !!}
                 {!! Form::close() !!}
             @endcan
         </td>
@@ -54,16 +53,6 @@
     @endforeach
 </table>
 
-
 {!! $roles->render() !!}
 
 @endsection
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> </script>
-@stop
