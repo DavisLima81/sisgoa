@@ -12,7 +12,7 @@
         <div class="pull-left">
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('pops.index') }}"> Voltar</a>
+            <a class="btn btn-primary btn-sm" href="{{ route('pops.index') }}"> Voltar</a>
         </div>
         <br>
     </div>
@@ -56,7 +56,7 @@
     </div>
     
         
-    <button type= "submit" class="btn btn-primary">Enviar</button>
+    <button type= "submit" class="btn btn-primary btn-sm">Enviar</button>
 </form>
 
    

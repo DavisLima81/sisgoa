@@ -154,7 +154,7 @@ return [
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_animation_speed' => 250,
 
     /*
     |--------------------------------------------------------------------------
@@ -209,7 +209,7 @@ return [
     |
     */
 
-    'enabled_laravel_mix' => false,
+    'enabled_laravel_mix' => true,
     'laravel_mix_css_path' => 'css/app.css',
     'laravel_mix_js_path' => 'js/app.js',
 
@@ -229,8 +229,8 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
+            'text'         => 'pesquisar',
+            'topnav_right' => false,
         ],
         [
             'type'         => 'fullscreen-widget',
@@ -240,11 +240,40 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'pesquisar',
         ],        
+        
+        // Legenda/título secão:
+        [
+            'header' => 'SEÇÕES',
+            'classes' => 'text-light-gray',
+        ],
+        /* MENU ITEM - SEÇÃO DE PROJETOS E AQUISIÇÕES */
+        [
+            'text'    => 'Aquisições (APA)',
+            'icon'    => 'fas fa-fw fa-credit-card',
+            'icon_color' => 'info',
+            'can' => 'spa',
+            'submenu' => [
+                [
+                    'text' => 'Processos',
+                    'url'  => '#',
+                    'icon' => 'fa fa-fw fa-book',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text' => 'Projetos',
+                    'url'  => '#',
+                    'icon' => 'fas fa-fw fa-file',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+            ],
+        ],
         /* MENU ITEM - ASSESSORIA DE SEGURANÇA OPERACIONAL */
         [
-            'text'    => 'Ass. Seg. Operacional',
+            'text'    => 'Segurança de Voo (ASO)',
             'icon'    => 'fas fa-fw fa-user-shield',
             'icon_color' => 'info',
             'can' => 'aso',
@@ -253,6 +282,13 @@ return [
                     'text'        => 'Relprev',
                     'url'         => '#',
                     'icon'        => 'fas fa-fw fa-skull-crossbones',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Diligência',
+                    'url'         => '#',
+                    'icon'        => 'fas fa-fw fa-feather',
                     'label'       => '!',
                     'label_color' => 'danger',
                 ],
@@ -272,32 +308,69 @@ return [
                 ],
             ],
         ],
+        /* MENU ITEM - SEÇÃO ADMINISTRATIVA */
+        [
+            'text'    => 'Administrativa (SAD)',
+            'icon'    => 'fas fa-fw fa-building',
+            'icon_color' => 'info',
+            'can' => 'sop',
+            'submenu' => [
+                [
+                    'text'        => 'Escala de serviço',
+                    'url'         => '#',
+                    'icon'    => 'fas fa-fw fa-solid fa-fire-extinguisher',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Escala de expediente',
+                    'url'         => '#',
+                    'icon'        => 'fas fa-fw fa-chair',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Permutas',
+                    'url'         => '#',
+                    'icon'        => 'far fa-fw fa-handshake',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Boletim GOA',
+                    'url'         => '#',
+                    'icon'        => 'fa fa-fw fa-newspaper',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text'        => 'Configurações',
+                    'url'         => '#',
+                    'icon'        => 'fas fa-fw fa-desktop',
+                    'label'       => '!',
+                    'label_color' => 'danger',
+                ],
+            ],
+        ],
         /* MENU ITEM - SEÇÃO OPERACIONAL */
         [
-            'text'    => 'Seção Operacional',
+            'text'    => 'Operações (SOP)',
             'icon'    => 'fas fa-fw fa-rocket',
             'icon_color' => 'info',
             'can' => 'sop',
             'submenu' => [
                 [
-                    'text'        => 'Informar Voo',
+                    'text'        => 'Relatar Voo',
                     'url'         => '#',
                     'icon'        => 'fas fa-fw fa-save',
                     'label'       => '!',
                     'label_color' => 'danger',
                 ],
                 [
-                    'text'        => 'Proc. Operacionais',
+                    'text'        => 'Procedimentos (POP)',
                     'url'         => 'pops',
                     'icon'        => 'fas fa-fw fa-thumbs-up',
                     /* 'label'       => 18, */
-                    'label_color' => 'danger',
-                ],
-                [
-                    'text'        => 'Escalas',
-                    'url'         => '#',
-                    'icon'        => 'far fa-fw fa-calendar-check',
-                    'label'       => '!',
                     'label_color' => 'danger',
                 ],
                 [
@@ -316,9 +389,10 @@ return [
                 ],
             ],
         ],
+
         /* MENU ITEM - SEÇÃO DE MANUTENÇÃO DE HELICÓPTEROS*/
         [
-            'text'    => 'Seção Mt. Helicópteros',
+            'text'    => 'Manutenção (SMH)',
             'icon'    => 'fas fa-fw fa-wrench',
             'icon_color' => 'info',
             'can' => 'smh',
@@ -346,24 +420,29 @@ return [
                 ],
             ],
         ],
-        /* MENU ITEM - SEÇÃO DE PROJETOS E AQUISIÇÕES */
+        // Legenda/título secão|menu:
         [
-            'text'    => 'Seção Proj. Aquisições',
-            'icon'    => 'fas fa-fw fa-credit-card',
+            'header' => 'RECURSOS',
+            'classes' => 'text-light-gray',
+        ],
+        /* MENU ITEM - CONTROLE DE COMBUSTÍVEL DE AVIAÇÃO*/
+        [
+            'text'    => 'Combustível',
+            'icon'    => 'fas fa-fw fa-gas-pump',
             'icon_color' => 'info',
-            'can' => 'spa',
+            'can' => 'smh',
             'submenu' => [
                 [
-                    'text' => 'Processos',
-                    'url'  => '#',
-                    'icon' => 'fa fa-fw fa-book',
+                    'text'        => 'Relatar Abatescimento',
+                    'url'         => '#',
+                    'icon'        => 'fas fa-fw fa-save',
                     'label'       => '!',
                     'label_color' => 'danger',
                 ],
                 [
-                    'text' => 'Controle Combustíveis',
+                    'text' => 'Controle',
                     'url'  => '#',
-                    'icon' => 'fas fa-fw fa-gas-pump',
+                    'icon' => 'fas fa-fw fa-ruler',
                     'label'       => '!',
                     'label_color' => 'danger',
                 ],
@@ -455,7 +534,6 @@ return [
             'url'        => '#',
         ], */
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Menu Filters
@@ -516,18 +594,13 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
-                    'location' => 'vendor/select2/js/select2.full.min.js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => true,
-                    'location' => 'vendor/select2/css/select2.min.css',
-                ],
-                [
-                    'type' => 'css',
-                    'asset' => true,
-                    'location' => 'vendor/select2-bootstrap4-theme/select2-bootstrap4.min.css',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
                 ],
             ],
         ],
@@ -563,16 +636,6 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
-                ],
-            ],
-            'BsCustomFileInput' => [
-                'active' => false,
-                'files' => [
-                    [
-                        'type' => 'js',
-                        'asset' => true,
-                        'location' => 'vendor/bs-custom-file-input/bs-custom-file-input.min.js',
-                    ],
                 ],
             ],
         ],
@@ -623,5 +686,5 @@ return [
     |
     */
 
-    'livewire' => true,
+    'livewire' => false,
 ];

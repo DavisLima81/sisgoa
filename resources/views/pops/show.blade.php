@@ -13,7 +13,7 @@
             <h4> Visualizar POP</h4>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}"> Voltar</a>
+            <a class="btn btn-primary btn-sm" href="{{ route('pops.index') }}"> Voltar</a>
         </div>
     </div>
 </div>
